@@ -4,15 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap"
+      rel="stylesheet"
+    />
     <title>Number Converter</title>
   </head>
   <body>
     <section>
-      <h1>Number converter</h1>
-      <label for="number">Your number:</label><br />
-      <input type="number" id="number" name="number" /><br />
-      <h1>The translated number</h1>
-      <button>Convert</button>
+      <h1 class="title">Number converter</h1>
+      <div class="wrapper">
+        <label for="number">▶️ Enter the number you want to convert:</label>
+        <input type="number" id="number" name="number" /><br />
+      </div>
+      <button class="converter">Convert</button>
+      <h1 class="beforeText">⏬ Your converted number: ⏬</h1>
+      <h1 class="result"></h1>
+      <h1 class="error"></h1>
     </section>
     <script src="script.js"></script>
   </body>
