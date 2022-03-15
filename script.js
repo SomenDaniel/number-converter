@@ -1,16 +1,16 @@
+// selectors
 const btn = document.querySelector(".converter");
 const resultNum = document.querySelector(".result");
 const userNumber = document.querySelector("#number");
 const displayError = document.querySelector(".error");
 
-let numbers;
-let helper = 7;
+// variables
 let result = "";
-let number;
 let splitted;
 let error = "";
 let value;
 
+// Number helpers.
 const oneDigit = {
   1: "one",
   2: "two",
@@ -38,6 +38,7 @@ const twoDigit = {
   14: "fourteen",
 };
 
+// Functions
 const twoDigits = (array) => {
   let num = "";
   if (array[1] === "0") {
@@ -160,6 +161,8 @@ const millions = (array) => {
   }
   return num;
 };
+
+// Number helper.
 const lengthHelper = [
   oneDigit,
   twoDigits,
@@ -170,6 +173,7 @@ const lengthHelper = [
   millions,
 ];
 
+// the onclick function
 btn.addEventListener("click", function () {
   value = "";
   error = "";
