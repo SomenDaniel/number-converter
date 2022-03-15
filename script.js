@@ -1,6 +1,7 @@
 const btn = document.querySelector(".converter");
 const resultNum = document.querySelector(".result");
 const userNumber = document.querySelector("#number");
+const displayError = document.querySelector(".error");
 
 let numbers;
 let helper = 7;
@@ -170,16 +171,23 @@ const lengthHelper = [
 ];
 
 btn.addEventListener("click", function () {
+  value = "";
+  error = "";
   number = userNumber.value;
   splitted = userNumber.value.split("");
-  console.log(splitted);
   const rigthFunction = lengthHelper[splitted.length - 1];
   if (splitted.length === 0) {
     error = "This is not a number!";
+    value = "";
   } else if (splitted[0] === "-") {
     error = "We do not accept negative numbers!";
+    value = "";
+  } else if (splitted.length > 7) {
+    error = "This converter is working for seven digits!";
+    value = "";
   } else if (splitted.length > 1 && splitted[0] === "0") {
     error = "We do not accept numbers starting with zero! ";
+    value = "";
   } else {
     if (splitted.length === 1 && splitted[0] === "0") {
       value = "zero";
@@ -192,5 +200,6 @@ btn.addEventListener("click", function () {
       error = "";
     }
   }
-  console.log(value, error);
+  displayError.innerHTML = error;
+  resultNum.innerHTML = value;
 });
