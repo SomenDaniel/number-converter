@@ -100,7 +100,7 @@ const thousands = (array) => {
 const tenThousands = (array) => {
   let num = "";
   let zeros = array.filter((el) => el === "0");
-  if (zeros.length === array.length - 2) {
+  if (array[2] === "0" && array[3] === "0" && array[4] === "0") {
     num = `${twoDigits([array[0], array[1]])} thousand`;
   } else if (array[2] !== "0") {
     num = `${twoDigits([array[0], array[1]])} thousand ${hundreds(
